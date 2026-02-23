@@ -19,5 +19,5 @@ export PORT=${PORT:-8080}
 echo "Configuring Nginx to listen on port $PORT..."
 sed -i "s/listen 8080;/listen ${PORT};/g" /etc/nginx/nginx.conf
 
-echo "Starting Application Processes..."
+echo "Starting Application Processes on port $PORT..."
 exec "$@"
