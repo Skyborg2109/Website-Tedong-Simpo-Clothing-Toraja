@@ -312,21 +312,54 @@
             z-index: 10;
         }
 
-        /* Back to Home arrow */
+        /* Back to Home Button */
         .back-home {
-            position: absolute;
-            bottom: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #aaa;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.3s;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
-        .back-home:hover { color: var(--color-accent); }
+
+        .back-home i {
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .back-home:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .back-home:hover i {
+            transform: translateX(-3px);
+        }
+
+        @media (max-width: 850px) {
+            .back-home {
+                top: 15px;
+                left: 15px;
+                padding: 10px 16px;
+                font-size: 13px;
+                background: rgba(19, 17, 27, 0.8);
+            }
+        }
 
         .mobile-switch {
             display: none;
@@ -379,7 +412,6 @@
             }
             h2 { font-size: 24px; }
             .submit-btn { padding: 14px 0; }
-            .back-home { bottom: -40px; }
         }
 
         @keyframes fadeInUp {
