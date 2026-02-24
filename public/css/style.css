@@ -727,17 +727,37 @@ button {
 }
 
 @media (max-width: 768px) {
+    .navbar-container {
+        padding: var(--spacing-xs) var(--spacing-md);
+    }
+
+    .navbar-logo img {
+        height: 45px;
+        width: 45px;
+    }
+
+    .logo-text {
+        font-size: 1.4rem;
+        gap: 4px;
+    }
+
+    .text-clothing {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+
     .navbar-menu {
         position: fixed;
-        top: 70px;
+        top: 65px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
+        height: calc(100vh - 65px);
         background: var(--color-white);
         flex-direction: column;
         padding: var(--spacing-lg);
         box-shadow: var(--shadow-lg);
         transition: var(--transition-base);
+        z-index: 1000;
     }
 
     .navbar-menu.active {
@@ -779,6 +799,23 @@ button {
 }
 
 @media (max-width: 480px) {
+    .navbar-logo img {
+        height: 40px;
+        width: 40px;
+        padding: 2px;
+    }
+
+    .logo-text {
+        font-size: 1.15rem;
+        gap: 3px;
+    }
+
+    .text-clothing {
+        font-size: 0.55rem;
+        letter-spacing: 0.5px;
+        margin-left: 2px;
+    }
+
     .hero-title {
         font-size: 2rem;
     }
