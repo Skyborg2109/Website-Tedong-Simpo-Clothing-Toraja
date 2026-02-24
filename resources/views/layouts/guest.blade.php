@@ -353,20 +353,18 @@
 
         @media (max-width: 850px) {
             .back-home {
-                top: 15px;
-                left: 15px;
-                padding: 0;
-                width: 40px;
-                height: 40px;
+                top: 20px;
+                left: 20px;
+                padding: 12px;
+                width: 45px;
+                height: 45px;
                 justify-content: center;
-                font-size: 0; /* Hide text */
                 background: rgba(19, 17, 27, 0.9);
             }
-            .back-home span {
+            .back-home .back-text {
                 display: none;
             }
             .back-home i {
-                font-size: 18px;
                 margin: 0;
             }
         }
@@ -434,6 +432,10 @@
     <div class="page-bg"></div>
     <div class="page-pattern"></div>
     @if(Route::currentRouteName() == 'login' || Route::currentRouteName() == 'register' || Request::is('login') || Request::is('register'))
+    <a href="{{ url('/') }}" class="back-home">
+        <i class="fas fa-arrow-left"></i> <span class="back-text">Kembali ke Beranda</span>
+    </a>
+
     <div class="card" id="authCard">
         <div class="card-bg" id="cardBg"></div>
 
@@ -523,17 +525,14 @@
                 </div>
             </form>
         </div>
-        
-        <a href="{{ url('/') }}" class="back-home">
-            <i class="fas fa-arrow-left"></i> <span>Kembali ke Beranda</span>
-        </a>
     </div>
     @else
+    <a href="{{ url('/') }}" class="back-home">
+        <i class="fas fa-arrow-left"></i> <span class="back-text">Kembali ke Beranda</span>
+    </a>
+
     <div class="auth-container">
         {{ $slot }}
-        <a href="{{ url('/') }}" class="back-home">
-            <i class="fas fa-arrow-left"></i> <span>Kembali ke Beranda</span>
-        </a>
     </div>
     @endif
 
