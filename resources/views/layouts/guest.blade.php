@@ -355,9 +355,19 @@
             .back-home {
                 top: 15px;
                 left: 15px;
-                padding: 10px 16px;
-                font-size: 13px;
-                background: rgba(19, 17, 27, 0.8);
+                padding: 0;
+                width: 40px;
+                height: 40px;
+                justify-content: center;
+                font-size: 0; /* Hide text */
+                background: rgba(19, 17, 27, 0.9);
+            }
+            .back-home span {
+                display: none;
+            }
+            .back-home i {
+                font-size: 18px;
+                margin: 0;
             }
         }
 
@@ -515,14 +525,14 @@
         </div>
         
         <a href="{{ url('/') }}" class="back-home">
-            <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+            <i class="fas fa-arrow-left"></i> <span>Kembali ke Beranda</span>
         </a>
     </div>
     @else
     <div class="auth-container">
         {{ $slot }}
         <a href="{{ url('/') }}" class="back-home">
-            <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+            <i class="fas fa-arrow-left"></i> <span>Kembali ke Beranda</span>
         </a>
     </div>
     @endif
