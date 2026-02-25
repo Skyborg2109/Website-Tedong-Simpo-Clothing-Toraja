@@ -24,6 +24,9 @@ chown -R www-data:www-data storage bootstrap/cache
 php artisan config:clear
 php artisan cache:clear
 
+echo "🔗 Creating storage symbolic link..."
+php artisan storage:link --force
+
 echo "🔄 Running migrations (with 30s timeout)..."
 # We use a timeout to prevent the whole container from hanging and causing a 502
 timeout 30s php artisan migrate --force --no-interaction || echo "⚠️ Migration failed or timed out. Checking database connection is recommended."
