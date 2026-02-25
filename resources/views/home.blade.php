@@ -104,6 +104,11 @@
                 @elseif($loop->index < 2)
                     <div class="product-badge">New</div>
                 @endif
+
+                <div class="stock-badge {{ $product->stock > 10 ? 'stock-available' : ($product->stock > 0 ? 'stock-low' : 'stock-out') }}">
+                    <i class="fas {{ $product->stock > 10 ? 'fa-check-circle' : ($product->stock > 0 ? 'fa-exclamation-triangle' : 'fa-times-circle') }}"></i>
+                    {{ $product->stock > 10 ? 'Tersedia' : ($product->stock > 0 ? 'Stok Terbatas' : 'Stok Habis') }}
+                </div>
                 
                 <div class="product-image">
                     @if($product->main_image)

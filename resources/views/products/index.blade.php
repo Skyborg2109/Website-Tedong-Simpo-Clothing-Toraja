@@ -58,6 +58,11 @@
                 @if($product->is_featured)
                     <div class="product-badge">Featured</div>
                 @endif
+
+                <div class="stock-badge {{ $product->stock > 10 ? 'stock-available' : ($product->stock > 0 ? 'stock-low' : 'stock-out') }}">
+                    <i class="fas {{ $product->stock > 10 ? 'fa-check-circle' : ($product->stock > 0 ? 'fa-exclamation-triangle' : 'fa-times-circle') }}"></i>
+                    {{ $product->stock > 10 ? 'Tersedia' : ($product->stock > 0 ? 'Stok Terbatas' : 'Stok Habis') }}
+                </div>
                 
                 <div class="product-image">
                     @if($product->main_image)

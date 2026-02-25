@@ -503,6 +503,39 @@ button {
     z-index: 10;
 }
 
+.stock-badge {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 700;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: var(--shadow-sm);
+}
+
+.stock-available {
+    background: #e6fcf5;
+    color: #0ca678;
+    border: 1px solid #c3fae8;
+}
+
+.stock-low {
+    background: #fff9db;
+    color: #f08c00;
+    border: 1px solid #fff3bf;
+}
+
+.stock-out {
+    background: #f1f3f5;
+    color: #495057;
+    border: 1px solid #dee2e6;
+}
+
 .product-image {
     position: relative;
     padding-top: 125%;
