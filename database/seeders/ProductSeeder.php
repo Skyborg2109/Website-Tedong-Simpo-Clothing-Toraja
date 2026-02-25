@@ -118,8 +118,24 @@ class ProductSeeder extends Seeder
             ],
         ];
 
-        foreach ($products as $product) {
-            Product::create($product);
+        foreach ($products as $index => $productData) {
+            // Mapping existing images to products
+            $imageFiles = [
+                'products/Es32YH9hhHGPBvm0zpstRhNDgGC98FCGNPN2sM7o.jpg',
+                'products/HwYtnNWCOCSEDbeUQ0zPzmYnPYfxGydHyhF0c02Y.jpg',
+                'products/QfWzl44bp6P4LIm9iHNB2FZe3GNDFZAeVHTZU69L.jpg',
+                'products/SI84IEvPEkLZ70upzX75iRoYxiO8QhYbqQzh9IeV.jpg',
+                'products/TdZBdEKQvgwV3tT2E4eqnBsnztxeoJn8ZvbZZkXv.jpg',
+                'products/VG7OryldDEb4SHn9KJ8E8PFH9D8YopyH3Pa7yype.jpg',
+            ];
+
+            $productData['main_image'] = $imageFiles[$index % count($imageFiles)];
+            $productData['images'] = [$productData['main_image']];
+
+            Product::updateOrCreate(
+                ['sku' => $productData['sku']],
+                $productData
+            );
         }
     }
 }

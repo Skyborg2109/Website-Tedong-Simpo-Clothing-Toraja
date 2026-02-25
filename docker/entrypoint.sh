@@ -31,6 +31,9 @@ echo "🔄 Running migrations (with 30s timeout)..."
 # We use a timeout to prevent the whole container from hanging and causing a 502
 timeout 30s php artisan migrate --force --no-interaction || echo "⚠️ Migration failed or timed out. Checking database connection is recommended."
 
+echo "🌱 Seeding product data..."
+php artisan db:seed --class=ProductSeeder --force
+
 # Nginx port
 export PORT=${PORT:-8080}
 echo "🌐 Configuring Nginx to listen on port: $PORT"
