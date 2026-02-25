@@ -126,7 +126,7 @@ class ProductSeeder extends Seeder
                 'products/QfWzl44bp6P4LIm9iHNB2FZe3GNDFZAeVHTZU69L.jpg',
                 'products/SI84IEvPEkLZ70upzX75iRoYxiO8QhYbqQzh9IeV.jpg',
                 'products/TdZBdEKQvgwV3tT2E4eqnBsnztxeoJn8ZvbZZkXv.jpg',
-                'products/VG7OryldDEb4SHn9KJ8E8PFH9D8YopyH3Pa7yype.jpg',
+                'products/VG7OryldDEb4SHn9KJ8E8PFH9D8YopyH3Pe7yype.jpg',
             ];
 
             $productData['main_image'] = $imageFiles[$index % count($imageFiles)];
