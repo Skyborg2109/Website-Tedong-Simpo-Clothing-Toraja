@@ -29,7 +29,12 @@ echo "🔗 Handling storage symbolic link..."
 rm -rf public/storage
 php artisan storage:link --force
 
-echo "🔍 Debug: Checking image files existence..."
+echo "� Seeding volume from Git images (if empty)..."
+if [ -d "storage_seed" ]; then
+    cp -rn storage_seed/* storage/app/public/ 2>/dev/null || true
+fi
+
+echo "�🔍 Debug: Checking image files existence..."
 ls -R storage/app/public/products | head -n 10
 
 echo "🔄 Running migrations (with 30s timeout)..."

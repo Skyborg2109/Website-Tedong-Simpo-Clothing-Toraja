@@ -37,6 +37,9 @@ WORKDIR /var/www/html
 # Copy application files
 COPY . .
 
+# Create a backup of the storage to seed the volume later
+RUN cp -r storage/app/public storage_seed
+
 # Copy built assets from builder stage
 COPY --from=assets-builder /app/public/build ./public/build
 
